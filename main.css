@@ -39,7 +39,6 @@ body {
   padding: 0;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
   font-family: "Roboto", sans-serif;
   background-color: #282A3A;
   color: #ffffff;
@@ -48,10 +47,37 @@ body .main {
   flex: 1;
 }
 
+body {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+}
+
+html {
+  height: -webkit-fill-available;
+}
+
 .header {
   padding: 20px;
-  min-height: 70px;
   background-image: linear-gradient(#000000, #282A3A);
+}
+.header--main .logo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 30px;
+  gap: 10px;
+}
+.header--main p {
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.header--main img {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ffffff;
+  border-radius: 50%;
+  height: 30px;
 }
 
 .button {
@@ -75,7 +101,7 @@ body .main {
 }
 
 .topics {
-  padding: 100px 20px 50px;
+  padding: 80px 20px 0;
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
