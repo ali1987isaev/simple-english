@@ -30,7 +30,7 @@ class Guess {
 
   initNextWord() {
     this.quessNextButton.addEventListener('click', () => {
-      this.guessWordExample.classList.toggle('hidden-up');
+      !this.guessWordExample.classList.contains('hidden-up') && this.guessWordExample.classList.add('hidden-up');
       this.index++;
       window.simpleEnglish.global.playClick();
       this.clearData();
