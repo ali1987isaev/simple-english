@@ -39,6 +39,12 @@ class Global {
     audioElem.play();
   }
 
+  playFinish() {
+    const audioElem = new Audio();
+    audioElem.src = './finish.wav';
+    audioElem.play();
+  }
+
   playClick() {
     const audioElem = new Audio();
     audioElem.src = './click.wav';

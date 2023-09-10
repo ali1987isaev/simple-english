@@ -86,6 +86,7 @@ class Guess {
     } else {
       this.container.style.display = 'none';
       this.theEnd.style.display = 'flex';
+      window.simpleEnglish.global.playFinish();
     }
   }
 
