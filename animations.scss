@@ -21,3 +21,24 @@
     transform: rotateZ(0);
   }
 }
+
+@keyframes scale {
+  0% {
+    transform: scale(1.0);
+  }
+  20% {
+    transform: scale(1.1);
+  }
+  40% {
+    transform: scale(1.2);
+  }
+  60% {
+    transform: scale(1.2);
+  }
+  80% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1.0);
+  }
+}

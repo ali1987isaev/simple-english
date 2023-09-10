@@ -10,6 +10,7 @@ class Guess {
     this.guessOption = this.container.querySelectorAll('[data-guess-option]');
     this.guessWordNumber = this.container.querySelector('[guess-word-number]');
     this.quessNextButton = this.container.querySelector('[data-guess-next-button]');
+    this.guessWordVoice = this.container.querySelector('[data-guess-word-voice]');
 
     this.init();
   }
@@ -98,10 +99,17 @@ class Guess {
       });
   }
 
+  initWordVoice() {
+    this.guessWordVoice.addEventListener('click', () => {
+      window.simpleEnglish.global.generateVoiceOutput(this.words[this.index].en);
+    });
+  }
+
   init() {
     window.simpleEnglish.global.playClick();
     this.initGuessWord();
     this.initNextWord();
+    this.initWordVoice();
   }
 }
 

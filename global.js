@@ -8,6 +8,10 @@ class Global {
     return data;
   }
 
+  /**
+   * 
+   * @param {arr} arr of DOM elements 
+   */
   initButtonAnimation(elements) {
     let counter = 0;
 
@@ -56,6 +60,14 @@ class Global {
         audioElem.muted = true;
       });
     };
+  }
+
+  generateVoiceOutput = (message) => {
+    const synth = window.speechSynthesis;
+    const utterThis = new SpeechSynthesisUtterance(`${message}`);
+    utterThis.lang = "en-US";
+    utterThis.rate = 0.9;
+    synth.speak(utterThis);
   }
 }
 

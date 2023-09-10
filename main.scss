@@ -120,10 +120,27 @@ html {
   &:disabled {
     background-color: $color-dark-secondary;
   }
+
+  &--icon {
+    background: transparent;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+
+    & svg {
+      color: $color-white;
+      height: 30px;
+      width: 30px;
+    }
+  }
 }
 
 .wiggle-animation {
   animation: wiggle 2s linear infinite;
+}
+
+.scale-animation {
+  animation: scale 2s linear infinite;
 }
 
 .topics {

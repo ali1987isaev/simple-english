@@ -13,6 +13,11 @@
 .guess .guess-word {
   text-align: center;
   font-size: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 .guess .guess-options {
   display: flex;

@@ -15,6 +15,11 @@
   .guess-word {
     text-align: center;
     font-size: $font-xxl;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
   }
 
   .guess-options {
