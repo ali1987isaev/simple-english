@@ -137,6 +137,9 @@ html {
   border-color: #000000;
   color: #000000;
 }
+.button--secondary:active, .button--secondary:focus, .button--secondary:hover, .button--secondary:focus-within {
+  opacity: 0.5;
+}
 .button--full {
   width: 100%;
 }

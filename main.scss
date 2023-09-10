@@ -104,6 +104,13 @@ html {
     padding: 12px 24px;
     border-color: $color-dark-primary;
     color: $color-dark-primary;
+
+    &:active,
+    &:focus,
+    &:hover,
+    &:focus-within {
+      opacity: 0.5;
+    }
   }
 
   &--full {
