@@ -38,6 +38,7 @@ class Guess {
 
   checkResult(e) {
     const result = e.target.dataset.guessOption;
+    
     if (result === this.currentWord) {
       this.quessNextButton.disabled = false;
       window.simpleEnglish.global.playCorrect();
@@ -52,6 +53,7 @@ class Guess {
 
       this.quessNextButton.classList.add('wiggle-animation');
     } else {
+      console.log('checkResult')
       this.lives > 0 && window.simpleEnglish.global.playError();
       this.lives--;
       this.inittNumberOfLives();
@@ -82,6 +84,12 @@ class Guess {
     };
   }
 
+  initOptionsCheckResult() {
+    this.guessOption.forEach((option) => {
+      option.addEventListener('click', this.checkResult.bind(this));
+    });
+  }
+
   generateGuessItem() {
     if (!!this.words[this.index]) {
       this.guessWord.textContent = this.words[this.index].en;
@@ -92,9 +100,6 @@ class Guess {
       this.guessOption.forEach((option, idx) => {
         option.textContent = this.randomArray[idx].ru;
         option.dataset.guessOption = this.randomArray[idx].ru;
-  
-        // add check result functionality:
-        option.addEventListener('click', this.checkResult.bind(this), { once: true });
       });
   
       this.guessWordNumber.textContent = `${this.index + 1} / ${this.words.length}`;
@@ -127,6 +132,7 @@ class Guess {
   init() {
     window.simpleEnglish.global.playClick();
     this.initGuessWord();
+    this.initOptionsCheckResult();
     this.initNextWord();
     this.initWordVoice();
     this.inittNumberOfLives();
