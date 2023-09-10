@@ -53,7 +53,6 @@ class Guess {
 
       this.quessNextButton.classList.add('wiggle-animation');
     } else {
-      console.log('checkResult')
       this.lives > 0 && window.simpleEnglish.global.playError();
       this.lives--;
       this.inittNumberOfLives();
