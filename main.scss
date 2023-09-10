@@ -84,7 +84,6 @@ html {
   cursor: pointer;
   outline: none;
   font-size: $font-sm;
-  transition: all .3s ease-in;
 
   &--primary {
     background-color: $color-light-primary;
@@ -112,7 +111,7 @@ html {
   }
 
   &--correct {
-    padding: 15px 28px;
+    padding: 12px 24px;
     font-weight: 800;
     background-color: $color-correct;
     border-color: $color-dark-primary;

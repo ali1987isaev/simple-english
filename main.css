@@ -101,7 +101,6 @@ html {
   cursor: pointer;
   outline: none;
   font-size: 12px;
-  transition: all 0.3s ease-in;
 }
 .button--primary {
   background-color: #735F32;
@@ -122,7 +121,7 @@ html {
   width: 100%;
 }
 .button--correct {
-  padding: 15px 28px;
+  padding: 12px 24px;
   font-weight: 800;
   background-color: #A2FF86;
   border-color: #000000;
