@@ -1,5 +1,11 @@
 @import './variables.scss';
 
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .main {
   display: flex;
   align-items: center;
@@ -7,7 +13,7 @@
 }
 
 .guess {
-  padding: 20px;
+  padding: 30px 20px 20px;
   display: flex;
   flex-direction: column;
   gap: 50px;

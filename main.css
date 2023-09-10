@@ -164,6 +164,12 @@ html {
   width: 30px;
 }
 
+.heart-icon {
+  width: 20px;
+  color: #C69749;
+  fill: #900C3F;
+}
+
 .wiggle-animation {
   animation: wiggle 2s linear infinite;
 }

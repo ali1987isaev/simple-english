@@ -142,6 +142,12 @@ html {
   }
 }
 
+.heart-icon {
+  width: 20px;
+  color: $color-light-secondary;
+  fill: $color-red;
+}
+
 .wiggle-animation {
   animation: wiggle 2s linear infinite;
 }
