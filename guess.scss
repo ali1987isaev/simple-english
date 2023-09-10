@@ -1,0 +1,39 @@
+@import './variables.scss';
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.guess {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+
+  .guess-word {
+    text-align: center;
+    font-size: $font-xxl;
+  }
+
+  .guess-options {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .guess-word-number {
+    text-align: center;
+  }
+}
+
+.guess-end {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}

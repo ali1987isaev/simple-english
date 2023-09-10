@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./main.css">
+  <link rel="stylesheet" href="./guess.css">
+  <link rel="stylesheet" href="./footer-animation.css">
+  <link rel="shortcut icon" type="image/png" href="./favicon.png"/>
+  <title>Guess the meaning</title>
+  <script src="./global.js" defer></script>
+  <script src="./guess.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <a class="logo" href="/">
+      <img src="./favicon.png" alt="logo" loading="lazy">
+      <p>Simple English</p>
+    </a>
+  </header>
+  <main class="main">
+    <section class="guess" guess-container>
+      <p class="guess-word" data-guess-word></p>
+      <div class="guess-options">
+        <button class="button button--secondary" type="button" data-guess-option></button>
+        <button class="button button--secondary" type="button" data-guess-option></button>
+        <button class="button button--secondary" type="button" data-guess-option></button>
+        <button class="button button--secondary" type="button" data-guess-option></button>
+        <button class="button button--secondary" type="button" data-guess-option></button>
+      </div>
+      <button class="button button--primary button--full" data-guess-next-button disabled="true">Next word</button>
+      <div class="guess-word-number" guess-word-number></div>
+    </section>
+    <section class="guess-end" guess-end>
+      <h1 class="the-end">THE END!</h1>
+      <a class="button button--primary wiggle-animation" href="/">go back</a>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="loop-wrapper">
+      <div class="mountain"></div>
+      <div class="mountain"></div>
+      <div class="hill"></div>
+      <div class="tree"></div>
+      <div class="tree"></div>
+      <div class="tree"></div>
+      <div class="rock"></div>
+    </div> 
+  </footer>
+</body>
+</html>

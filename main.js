@@ -10,15 +10,15 @@ class Main {
 
     const initAnimation = setInterval(() => {
       const quantity = this.topicsContainer.querySelectorAll('.topics__item').length;
-
       if (counter < quantity) {
         this.topicsContainer.querySelectorAll('.topics__item')[counter].classList.add('wiggle-animation');
         counter++
       } else clearInterval(initAnimation);
-    }, 500);
+    }, 400);
   };
 
   init() {
+    window.simpleEnglish.global.playClick();
     this.initTopicsAnimation();
   }
 };

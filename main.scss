@@ -14,14 +14,20 @@ a {
   text-decoration: none;
 }
 
+p {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
   font-family: 'Roboto', sans-serif;
-  background-color: $color-dark-secondary;
+  font-size: $font-md;
   color: $color-white;
+  background-color: $color-dark-secondary;
 
   .main {
     flex: 1;
@@ -41,22 +47,20 @@ html {
   padding: 20px;
   background-image: linear-gradient($color-dark-primary, $color-dark-secondary);
 
-  &--main {
-    .logo {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      height: 30px;
-      gap: 10px;
-    }
+  .logo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 30px;
+    gap: 10px;
 
-    p {
+    & p {
       font-size: 16px;
       font-weight: 700;
       text-transform: uppercase;
     }
 
-    img {
+    & img {
       width: 30px;
       height: 30px;
       border: 1px solid $color-white;
@@ -73,13 +77,49 @@ html {
   white-space: nowrap;
   text-align: center;
   text-transform: uppercase;
+  border-radius: $border-radius;
+  width: fit-content;
+  border: 1px solid $color-light-secondary;
+  font-weight: 300;
+  cursor: pointer;
+  outline: none;
+  font-size: $font-sm;
+  transition: all .3s ease-in;
 
   &--primary {
     background-color: $color-light-primary;
-    padding: 10px;
-    border: 1px solid $color-light-secondary;
-    border-radius: $border-radius;
-    font-weight: 300;
+    padding: 12px;
+    color: $color-white;
+
+    &:active,
+    &:focus,
+    &:hover,
+    &:focus-within {
+      background-color: $color-light-secondary;
+      border-color: $color-white;
+    }
+  }
+
+  &--secondary {
+    background-color: $color-light-secondary;
+    padding: 12px 24px;
+    border-color: $color-dark-primary;
+    // color: $color-white;
+  }
+
+  &--full {
+    width: 100%;
+  }
+
+  &--correct {
+    padding: 15px 28px;
+    font-weight: 800;
+    background-color: $color-correct;
+    border-color: $color-dark-primary;
+  }
+
+  &:disabled {
+    background-color: $color-dark-secondary;
   }
 }
 
@@ -92,4 +132,8 @@ html {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+}
+
+.the-end {
+  font-size: $font-xxl;
 }
