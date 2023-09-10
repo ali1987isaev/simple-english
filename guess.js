@@ -61,6 +61,7 @@ class Guess {
     for (let index = 1; index < this.guessOption.length; index++) {
       const randomEl = newArr[Math.floor(Math.random() * newArr.length)]
       newArr = newArr.filter(el => el.en !== randomEl.en)
+      // mix words to put them in different positions
       Math.floor(Math.random() * 10) % 2 ? this.randomArray.push(randomEl) : this.randomArray.unshift(randomEl)
     };
   }
