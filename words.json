@@ -28,5 +28,20 @@
     "en": "Source",
     "ru": "Источник",
     "ex": "Can you identify the source of that noise?"
+  },
+  {
+    "en": "Aspect ratio",
+    "ru": "Соотношение сторон",
+    "ex": "The aspect ratio is the relationship between width and height"
+  },
+  {
+    "en": "Consume",
+    "ru": "Потреблять",
+    "ex": "Content that we consume on the home pages"
+  },
+  {
+    "en": "Entertainment",
+    "ru": "Развлечение",
+    "ex": "Home entertainment devices"
   }
 ]

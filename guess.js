@@ -9,6 +9,7 @@ class Guess {
     this.theEnd = document.querySelector('[guess-end]');
     this.gameOver = document.querySelector('[guess-game-over]');
     this.guessWord = this.container.querySelector('[data-guess-word]');
+    this.guessWordExample = this.container.querySelector('[data-guess-word-example]');
     this.guessOption = this.container.querySelectorAll('[data-guess-option]');
     this.guessWordNumber = this.container.querySelector('[guess-word-number]');
     this.quessNextButton = this.container.querySelector('[data-guess-next-button]');
@@ -29,6 +30,7 @@ class Guess {
 
   initNextWord() {
     this.quessNextButton.addEventListener('click', () => {
+      this.guessWordExample.classList.toggle('hidden-up');
       this.index++;
       window.simpleEnglish.global.playClick();
       this.clearData();
@@ -92,6 +94,7 @@ class Guess {
   generateGuessItem() {
     if (!!this.words[this.index]) {
       this.guessWord.textContent = this.words[this.index].en;
+      this.guessWordExample.textContent = this.words[this.index].ex;
       this.currentWord = this.words[this.index].ru;
 
       this.generateRandomWords();
@@ -128,9 +131,16 @@ class Guess {
     window.simpleEnglish.global.generateNumberOfLives(this.numberOfLives, this.lives);
   }
 
+  initShowExample() {
+    this.guessWord.addEventListener('click', () => {
+      this.guessWordExample.classList.toggle('hidden-up');
+    });
+  }
+
   init() {
     window.simpleEnglish.global.playClick();
     this.initGuessWord();
+    this.initShowExample();
     this.initOptionsCheckResult();
     this.initNextWord();
     this.initWordVoice();

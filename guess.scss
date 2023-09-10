@@ -13,7 +13,7 @@
 }
 
 .guess {
-  padding: 30px 20px 20px;
+  padding: 60px 20px 20px;
   display: flex;
   flex-direction: column;
   gap: 50px;
@@ -26,6 +26,26 @@
     justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
+  }
+
+  .guess-word-container {
+    position: relative;
+  }
+
+  .guess-word-example {
+    text-align: center;
+    font-size: $font-sm;
+    background: transparent;
+    border: 1px solid $color-light-secondary;
+    border-radius: $border-radius;
+    color: $color-white;
+    padding: 12px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: translateY(-60px);
   }
 
   .guess-options {

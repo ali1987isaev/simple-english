@@ -148,6 +148,11 @@ html {
   fill: $color-red;
 }
 
+.hidden-up {
+  opacity: 0;
+  visibility: hidden;
+}
+
 .wiggle-animation {
   animation: wiggle 2s linear infinite;
 }
