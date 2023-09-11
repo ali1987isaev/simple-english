@@ -16,7 +16,7 @@ class Words {
   }
 
   initCardAnimation() {
-    this.card.classList.add('card--rendered');
+    this.card.classList.toggle('card--rendered');
   }
 
   initCard() {
@@ -52,7 +52,7 @@ class Words {
 
   initSlider() {
     this.prev.addEventListener('click', () => {
-      this.card.classList.remove('card--rendered');
+      this.initCardAnimation();
       if (this.index > 0) {
         this.index--;
         this.initCard();
@@ -63,7 +63,7 @@ class Words {
       this.global.playSwap();
     })
     this.next.addEventListener('click', () => {
-      this.card.classList.remove('card--rendered');
+      this.initCardAnimation();
       if (this.index < this.words.length - 1) {
         this.index++;
         this.initCard();
