@@ -5,6 +5,7 @@ class Guess {
     this.randomArray = [];
     this.currentWord = '';
     this.lives = 5;
+    this.global = window.simpleEnglish.global;
     this.container = document.querySelector('[guess-container]');
     this.theEnd = document.querySelector('[guess-end]');
     this.gameOver = document.querySelector('[guess-game-over]');
@@ -32,7 +33,7 @@ class Guess {
     this.quessNextButton.addEventListener('click', () => {
       !this.guessWordExample.classList.contains('hidden-up') && this.guessWordExample.classList.add('hidden-up');
       this.index++;
-      window.simpleEnglish.global.playClick();
+      this.global.playClick();
       this.clearData();
       this.generateGuessItem();
     })
@@ -43,7 +44,7 @@ class Guess {
     
     if (result === this.currentWord) {
       this.quessNextButton.disabled = false;
-      window.simpleEnglish.global.playCorrect();
+      this.global.playCorrect();
       e.target.classList.add('button--correct');
 
       this.guessOption.forEach(button => {
@@ -55,7 +56,7 @@ class Guess {
 
       this.quessNextButton.classList.add('wiggle-animation');
     } else {
-      this.lives > 0 && window.simpleEnglish.global.playError();
+      this.lives > 0 && this.global.playError();
       this.lives--;
       this.inittNumberOfLives();
 
@@ -66,7 +67,7 @@ class Guess {
       if (this.lives < 1) {
         this.container.style.display = 'none';
         this.gameOver.style.display = 'flex';
-        window.simpleEnglish.global.playGameOver();
+        this.global.playGameOver();
       };
     };
   }
@@ -105,16 +106,16 @@ class Guess {
       });
   
       this.guessWordNumber.textContent = `${this.index + 1} / ${this.words.length}`;
-      window.simpleEnglish.global.initButtonAnimation(this.guessOption);
+      this.global.initButtonAnimation(this.guessOption);
     } else {
       this.container.style.display = 'none';
       this.theEnd.style.display = 'flex';
-      window.simpleEnglish.global.playFinish();
+      this.global.playFinish();
     }
   }
 
   initGuessWord() {
-    window.simpleEnglish.global
+    this.global
       .getWords().then(data => {
         this.words = data;
         this.generateGuessItem();
@@ -123,12 +124,12 @@ class Guess {
 
   initWordVoice() {
     this.guessWordVoice.addEventListener('click', () => {
-      window.simpleEnglish.global.generateVoiceOutput(this.words[this.index].en);
+      this.global.generateVoiceOutput(this.words[this.index].en);
     });
   }
 
   inittNumberOfLives() {
-    window.simpleEnglish.global.generateNumberOfLives(this.numberOfLives, this.lives);
+    this.global.generateNumberOfLives(this.numberOfLives, this.lives);
   }
 
   initShowExample() {
@@ -138,7 +139,7 @@ class Guess {
   }
 
   init() {
-    window.simpleEnglish.global.playClick();
+    this.global.playClick();
     this.initGuessWord();
     this.initShowExample();
     this.initOptionsCheckResult();
