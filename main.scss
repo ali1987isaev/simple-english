@@ -28,6 +28,7 @@ body {
   font-size: $font-md;
   color: $color-white;
   background-color: $color-dark-secondary;
+  position: relative;
 
   .main {
     flex: 1;
@@ -37,6 +38,13 @@ body {
 body {
   min-height: 100vh;
   min-height: -webkit-fill-available;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 html {

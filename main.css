@@ -68,6 +68,7 @@ body {
   font-size: 18px;
   color: #ffffff;
   background-color: #282A3A;
+  position: relative;
 }
 body .main {
   flex: 1;
@@ -76,6 +77,13 @@ body .main {
 body {
   min-height: 100vh;
   min-height: -webkit-fill-available;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 html {
