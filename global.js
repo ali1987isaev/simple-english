@@ -37,6 +37,18 @@ class Global {
     audioElem.play();
   }
 
+  playSwap() {
+    const audioElem = new Audio();
+    audioElem.src = './swap.wav';
+    audioElem.play();
+  }
+
+  playFlick() {
+    const audioElem = new Audio();
+    audioElem.src = './flick.wav';
+    audioElem.play();
+  }
+
   playError() {
     const audioElem = new Audio();
     audioElem.src = './error.wav';

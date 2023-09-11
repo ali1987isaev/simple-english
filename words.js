@@ -46,6 +46,7 @@ class Words {
       ) return;
 
       this.card.classList.toggle('card__flipped');
+      this.global.playFlick();
     });
   }
 
@@ -59,6 +60,7 @@ class Words {
         this.index = this.words.length - 1
         this.initCard();
       }
+      this.global.playSwap();
     })
     this.next.addEventListener('click', () => {
       this.card.classList.remove('card--rendered');
@@ -69,6 +71,7 @@ class Words {
         this.index = 0;
         this.initCard();
       }
+      this.global.playSwap();
     })
   }
 
