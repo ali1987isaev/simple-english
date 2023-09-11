@@ -149,6 +149,4 @@ class Guess {
   }
 }
 
-
-
 new Guess();

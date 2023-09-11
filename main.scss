@@ -133,6 +133,7 @@ html {
     width: 40px;
     height: 40px;
     border-radius: 50%;
+    font-size: $font-xl;
 
     & svg {
       color: $color-white;
@@ -171,3 +172,23 @@ html {
 .the-end {
   font-size: $font-xxl;
 }
+
+// classes
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-center-column {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.gap-10 { gap: 10px; }
+.gap-20 { gap: 20px; }
+.gap-40 { gap: 40px; }
+
+.mt-30 { margin-top: 30px; }
