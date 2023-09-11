@@ -10,6 +10,7 @@ class Words {
     this.counter = document.querySelector('[data-counter]');
     this.prev = document.querySelector('[data-button-prev]');
     this.next = document.querySelector('[data-button-next]');
+    this.voiceOutput = document.querySelector('[data-generate-voice-output]');
 
     this.init();
   }
@@ -75,11 +76,18 @@ class Words {
     this.counter.textContent = `${this.index +1} / ${this.words.length}`
   }
 
+  generateVoice() {
+    this.voiceOutput.addEventListener('click', () => {
+      this.global.generateVoiceOutput(this.words[this.index].en)
+    })
+  }
+
   init() {
     this.global.playClick();
     this.setWords();
     this.initFlippetCardsHandler();
     this.initSlider();
+    this.generateVoice();
   }
 }
 
