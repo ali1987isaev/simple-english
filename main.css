@@ -162,15 +162,19 @@ html {
 }
 .button--icon {
   background: transparent;
-  width: 40px;
-  height: 40px;
+  min-width: 40px;
+  min-height: 40px;
+  max-width: 40px;
+  max-height: 40px;
   border-radius: 50%;
   font-size: 30px;
 }
 .button--icon svg {
   color: #ffffff;
-  height: 30px;
-  width: 30px;
+  min-width: 30px;
+  min-height: 30px;
+  max-width: 30px;
+  max-height: 30px;
 }
 
 .heart-icon {
