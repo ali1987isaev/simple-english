@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./main.css">
+  <link rel="stylesheet" href="./collect-words.css">
+  <link rel="stylesheet" href="./footer-animation.css">
+  <link rel="shortcut icon" type="image/png" href="./favicon.png"/>
+  <title>Words</title>
+  <script src="./global.js" defer></script>
+  <script src="./collect-words.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <a class="logo" href="./index.html">
+      <img src="./favicon.png" alt="logo" loading="lazy">
+      <p>Collect Word</p>
+    </a>
+  </header>
+  <main class="main p-20">
+    <section class="content flex-center">
+      <div class="content__word-en" data-word-en></div>
+      <div class="content__word-ru" data-word-ru></div>
+      <div class="content__letters" data-selected-letters-result></div>
+    </section>
+    <section class="flex-center check-the-result">
+      <button class="button button--primary" type="button" disabled data-check-the-result>check the result</button>
+    </section>
+    <section class="p-20 flex-center">
+      <div data-counter></div>
+    </section>
+    <section class="letter-buttons-container" data-letter-buttons-container>
+      <button class="button button--primary button--delete" type="button" data-letter-type="delete">delete</button>
+      <div class="flex items-center gap-5">
+        <button class="button button--primary button--letter" type="button" data-letter-type="q">q</button>
+        <button class="button button--primary button--letter" type="button" data-letter-type="w">w</button>
+        <button class="button button--primary button--letter" type="button" data-letter-type="e">e</button>
+        <button class="button button--primary button--letter" type="button" data-letter-type="r">r</button>
+        <button class="button button--primary button--letter" type="button" data-letter-type="t">t</button>
+        <button class="button button--primary button--letter" type="button" data-letter-type="y">y</button>
+        <button class="button button--primary button--letter" type="button" data-letter-type="u">u</button>
+        <button class="button button--primary button--letter" type="button" data-letter-type="i">i</button>
+        <button class="button button--primary button--letter" type="button" data-letter-type="o">o</button>
+        <button class="button button--primary button--letter" type="button" data-letter-type="p">p</button>
+      </div>
+      <div class="flex items-center mt-10 gap-5">
+        <button class="button button--primary button--letter" type="button" data-letter-type="a">a</button>
+        <button class="button button--primary button--letter" type="button" data-letter-type="s">s</button>
+        <button class="button button--primary button--letter" type="button" data-letter-type="d">d</button>
+        <button class="button button--primary button--letter" type="button" data-letter-type="f">f</button>
+        <button class="button button--primary button--letter" type="button" data-letter-type="g">g</button>
+        <button class="button button--primary button--letter" type="button" data-letter-type="h">h</button>
+        <button class="button button--primary button--letter" type="button" data-letter-type="j">j</button>
+        <button class="button button--primary button--letter" type="button" data-letter-type="k">k</button>
+        <button class="button button--primary button--letter" type="button" data-letter-type="l">l</button>
+      </div>
+      <div class="flex items-center mt-10 gap-5">
+        <button class="button button--primary button--letter" type="button" data-letter-type="z">z</button>
+        <button class="button button--primary button--letter" type="button" data-letter-type="x">x</button>
+        <button class="button button--primary button--letter" type="button" data-letter-type="c">c</button>
+        <button class="button button--primary button--letter" type="button" data-letter-type="v">v</button>
+        <button class="button button--primary button--letter" type="button" data-letter-type="b">b</button>
+        <button class="button button--primary button--letter" type="button" data-letter-type="n">n</button>
+        <button class="button button--primary button--letter" type="button" data-letter-type="m">m</button>
+      </div>
+      <button class="button button--primary button--full mt-10" type="button" data-letter-type="space">space</button>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="loop-wrapper">
+      <div class="mountain"></div>
+      <div class="mountain"></div>
+      <div class="hill"></div>
+      <div class="tree"></div>
+      <div class="tree"></div>
+      <div class="tree"></div>
+      <div class="rock"></div>
+    </div> 
+  </footer>
+</body>
+</html>

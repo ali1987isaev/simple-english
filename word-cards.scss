@@ -1,0 +1,96 @@
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.card {
+  background-color: transparent;
+  min-width: 100vw;
+  max-width: 100vw;
+  height: 53vh;
+  perspective: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+
+  &--rendered {
+    opacity: 1;
+    scale: 1;
+    transform: translateY(0px);
+    transition: opacity .4s ease-in;
+  }
+
+  &__inner {
+    position: relative;
+    width: 70%;
+    max-width: 350px;
+    height: 90%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: $border-radius;
+
+    h4 {
+      overflow-wrap: anywhere;
+    }
+
+    .card.card__flipped & {
+      transform: rotateY(180deg);
+    }
+  }
+
+  &__front,
+  &__back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: $border-radius;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 50px;
+    padding: 20px;
+    font-size: 30px;
+    border: 1px solid $color-light-secondary;
+    overflow: hidden;
+  }
+
+  &__front {
+    background-color: $color-light-primary;
+    color: $color-white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  &__back {
+    background-color: $color-light-secondary;
+    border-color: $color-white;
+    color: $color-white;
+    transform: rotateY(180deg);
+  }
+
+  &__word {
+    font-size: $font-lg;
+    overflow-wrap: anywhere;
+  }
+
+  &__expression {
+    font-size: $font-md;
+    color: $color-dark-secondary;
+  }
+}
+
+.button--primary {
+  padding: 20px 40px;
+}

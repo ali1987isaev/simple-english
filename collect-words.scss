@@ -1,0 +1,51 @@
+@import './variables.scss';
+
+.main {
+  display: flex;
+  flex-direction: column;
+
+  .content {
+    flex: 1;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .letter-buttons-container {
+    padding-bottom: 80px;
+    position: relative;
+  }
+}
+
+.button--delete {
+  position: absolute;
+  right: 0;
+  top: -50px;
+}
+
+.button--space {
+  background-color: transparent;
+  border: transparent;
+}
+
+.content__word-ru {
+  font-size: $font-lg;
+}
+
+.content__word-en {
+  font-size: $font-lg;
+  color: $color-correct;
+  padding-bottom: 20px;
+}
+
+.content__letters {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.check-the-result {
+  padding-bottom: 60px;
+}

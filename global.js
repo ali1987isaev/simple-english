@@ -8,6 +8,12 @@ class Global {
     return data;
   }
 
+  async getExpressions() {
+    const res =  await fetch('./expressions.json');
+    const data = await res.json();
+    return data;
+  }
+
   /**
    * 
    * @param {arr} arr of DOM elements 

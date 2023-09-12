@@ -178,6 +178,11 @@ html {
   max-width: 30px;
   max-height: 30px;
 }
+.button--letter {
+  padding: 0;
+  flex: 1;
+  min-height: 30px;
+}
 
 .heart-icon {
   width: 20px;
@@ -209,6 +214,15 @@ html {
   font-size: 36px;
 }
 
+.flex {
+  display: flex;
+}
+
+.items-center {
+  align-items: center;
+  justify-content: center;
+}
+
 .flex-center {
   display: flex;
   align-items: center;
@@ -222,6 +236,10 @@ html {
   flex-direction: column;
 }
 
+.gap-5 {
+  gap: 5px;
+}
+
 .gap-10 {
   gap: 10px;
 }
@@ -232,6 +250,26 @@ html {
 
 .gap-40 {
   gap: 40px;
+}
+
+.p-5 {
+  padding: 5px;
+}
+
+.p-10 {
+  padding: 10px;
+}
+
+.p-20 {
+  padding: 20px;
+}
+
+.mt-10 {
+  margin-top: 10px;
+}
+
+.mt-20 {
+  margin-top: 20px;
 }
 
 .mt-30 {
