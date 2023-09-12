@@ -18,7 +18,7 @@
       <p>Collect Word</p>
     </a>
   </header>
-  <main class="main p-20">
+  <main class="main p-20" main-content>
     <section class="content flex-center">
       <div class="content__word-en" data-word-en></div>
       <div class="content__word-ru" data-word-ru></div>
@@ -26,6 +26,7 @@
     </section>
     <section class="flex-center check-the-result">
       <button class="button button--primary" type="button" disabled data-check-the-result>check the result</button>
+      <button class="button button--primary button--correct wiggle-animation hidden" type="button" data-next>next</button>
     </section>
     <section class="p-20 flex-center">
       <div data-counter></div>
@@ -67,6 +68,10 @@
       <button class="button button--primary button--full mt-10" type="button" data-letter-type="space">space</button>
     </section>
   </main>
+  <section class="finish hidden" collect-words-finish>
+    <h1>THE END!</h1>
+    <a class="button button--primary wiggle-animation" href="./index.html">go back</a>
+  </section>
   <footer class="footer">
     <div class="loop-wrapper">
       <div class="mountain"></div>

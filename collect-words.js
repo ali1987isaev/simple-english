@@ -3,20 +3,32 @@ class CollectWords {
     this.index = 0;
     this.words = [];
     this.result = '';
+    this.letterButtonsArr = [];
+    this.lettersArr = [];
     this.global = window.simpleEnglish.global;
-    this.currentWordEn = document.querySelector('[data-word-en]');
-    this.currentWordRu = document.querySelector('[data-word-ru]');
-    this.selectedLettersResult = document.querySelector('[data-selected-letters-result]');
-    this.counter = document.querySelector('[data-counter]');
-    this.letterButtonsContainer = document.querySelector('[data-letter-buttons-container]');
-    this.checkResult = document.querySelector('[data-check-the-result]');
+    this.content = document.querySelector('[main-content]');
+    this.currentWordEn = this.content.querySelector('[data-word-en]');
+    this.currentWordRu = this.content.querySelector('[data-word-ru]');
+    this.selectedLettersResult = this.content.querySelector('[data-selected-letters-result]');
+    this.counter = this.content.querySelector('[data-counter]');
+    this.letterButtonsContainer = this.content.querySelector('[data-letter-buttons-container]');
+    this.checkResult = this.content.querySelector('[data-check-the-result]');
+    this.nextButton = this.content.querySelector('[data-next]');
+    this.collectWordsFinish = document.querySelector('[collect-words-finish]');
 
     this.init();
   }
 
   renderCurrentWord() {
-    this.currentWordRu.textContent = this.words[this.index].ru
-    this.initCounter()
+    if (!!this.words[this.index]) {
+      this.currentWordRu.textContent = this.words[this.index].ru
+      this.initCounter()
+    } else {
+      // finish!
+      this.content.classList.add('hidden');
+      this.collectWordsFinish.classList.remove('hidden');
+      this.global.playFinish();
+    }
   }
 
   setWords() {
@@ -48,9 +60,6 @@ class CollectWords {
   }
 
   initLetterButtonClick() {
-    let letterButtonsArr = [];
-    let lettersArr = []
-
     this.letterButtonsContainer.addEventListener('click', (e) => {
       if (!e.target.tagName.toUpperCase() === "BUTTON") return;
 
@@ -60,31 +69,51 @@ class CollectWords {
 
       if (letter !== 'delete' && letter !== 'space') {
         const item = `<button class="button button--primary" type="button">${letter}</button>`;
-        letterButtonsArr.push(item);
-        lettersArr.push(letter)
+        this.letterButtonsArr.push(item);
+        this.lettersArr.push(letter)
 
-        this.selectedLettersResult.innerHTML = letterButtonsArr.join().replaceAll(",", "");
-        this.result = lettersArr.join().replaceAll(",", "");
+        this.selectedLettersResult.innerHTML = this.letterButtonsArr.join().replaceAll(",", "");
+        this.result = this.lettersArr.join().replaceAll(",", "");
         this.checkResultButtonStatus();
 
       } else if (letter === 'delete' && letter !== 'space') {
-        if (!letterButtonsArr.length) return;
-        letterButtonsArr.pop();
-        lettersArr.pop();
-        this.selectedLettersResult.innerHTML = letterButtonsArr.join().replaceAll(",", "");
-        this.result = lettersArr.join().replaceAll(",", "");
+        if (!this.letterButtonsArr.length) return;
+        this.letterButtonsArr.pop();
+        this.lettersArr.pop();
+        this.selectedLettersResult.innerHTML = this.letterButtonsArr.join().replaceAll(",", "");
+        this.result = this.lettersArr.join().replaceAll(",", "");
         this.checkResultButtonStatus();
 
       } else if (letter !== 'delete' && letter === 'space') {
-        if (!letterButtonsArr.length) return;
+        if (!this.letterButtonsArr.length) return;
         const item = `<button class="button button--primary button--space" type="button"></button>`;
-        letterButtonsArr.push(item);
-        lettersArr.push(' ');
+        this.letterButtonsArr.push(item);
+        this.lettersArr.push(' ');
 
-        this.selectedLettersResult.innerHTML = letterButtonsArr.join().replaceAll(",", "");
-        this.result = lettersArr.join().replaceAll(",", "");
+        this.selectedLettersResult.innerHTML = this.letterButtonsArr.join().replaceAll(",", "");
+        this.result = this.lettersArr.join().replaceAll(",", "");
         this.checkResultButtonStatus();
       };
+    })
+  }
+
+  clearData() {
+    this.result = '';
+    this.currentWordEn.textContent = '';
+    this.selectedLettersResult.innerHTML = '';
+    this.letterButtonsArr = [];
+    this.lettersArr = [];
+    this.nextButton.classList.add('hidden');
+    this.checkResult.classList.remove('hidden');
+    this.checkResult.classList.remove('wiggle-animation');
+    this.checkResult.disabled = true;
+  }
+
+  initNextWord() {
+    this.nextButton.addEventListener('click', () => {
+      this.index++;
+      this.renderCurrentWord();
+      this.clearData();
     })
   }
 
@@ -93,6 +122,9 @@ class CollectWords {
       if (this.result.toLocaleLowerCase().trim() === this.words[this.index].en.toLocaleLowerCase().trim()) {
         this.global.playCorrect();
         this.currentWordEn.textContent = this.words[this.index].en;
+
+        this.checkResult.classList.add('hidden');
+        this.nextButton.classList.remove('hidden');
       } else {
         this.global.playError();
       };
@@ -104,6 +136,7 @@ class CollectWords {
     this.setWords();
     this.initLetterButtonClick();
     this.initCheckResult();
+    this.initNextWord();
   }
 }
 

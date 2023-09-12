@@ -34,11 +34,10 @@
 .content__word-en {
   font-size: $font-lg;
   color: $color-correct;
-  padding-bottom: 20px;
 }
 
 .content__letters {
-  height: 40px;
+  min-height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -47,5 +46,23 @@
 }
 
 .check-the-result {
-  padding-bottom: 60px;
+  padding: 20px 20px 60px;
+}
+
+.button--correct {
+  color: $color-dark-secondary;
+  border-color: $color-light-primary;
+}
+
+.finish {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 30px;
+
+  h1 {
+    font-size: $font-xxl;
+  }
 }

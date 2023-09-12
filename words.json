@@ -1,20 +1,5 @@
 [
   {
-    "en": "Performance",
-    "ru": "Производительность",
-    "ex": "Effective time management can boost productivity and performance"
-  },
-  {
-    "en": "Discrepancies",
-    "ru": "Расхождение",
-    "ex": "Price discrepancies between PDP and PLP"
-  },
-  {
-    "en": "Appreciate",
-    "ru": "Ценить",
-    "ex": "Thank you, I really appreciate it"
-  },
-  {
     "en": "Reject",
     "ru": "Отклонять",
     "ex": "The request was rejected"
@@ -30,14 +15,29 @@
     "ex": "Can you identify the source of that noise?"
   },
   {
-    "en": "Aspect ratio",
-    "ru": "Соотношение сторон",
-    "ex": "The aspect ratio is the relationship between width and height"
+    "en": "Performance",
+    "ru": "Производительность",
+    "ex": "Effective time management can boost productivity and performance"
   },
   {
     "en": "Consume",
     "ru": "Потреблять",
     "ex": "Content that we consume on the home pages"
+  },
+  {
+    "en": "Discrepancies",
+    "ru": "Расхождение",
+    "ex": "Price discrepancies between PDP and PLP"
+  },
+  {
+    "en": "Appreciate",
+    "ru": "Ценить",
+    "ex": "Thank you, I really appreciate it"
+  },
+  {
+    "en": "Aspect ratio",
+    "ru": "Соотношение сторон",
+    "ex": "The aspect ratio is the relationship between width and height"
   },
   {
     "en": "Entertainment",

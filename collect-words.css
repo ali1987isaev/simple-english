@@ -30,11 +30,10 @@
 .content__word-en {
   font-size: 24px;
   color: #A2FF86;
-  padding-bottom: 20px;
 }
 
 .content__letters {
-  height: 40px;
+  min-height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -43,5 +42,22 @@
 }
 
 .check-the-result {
-  padding-bottom: 60px;
+  padding: 20px 20px 60px;
+}
+
+.button--correct {
+  color: #282A3A;
+  border-color: #735F32;
+}
+
+.finish {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 30px;
+}
+.finish h1 {
+  font-size: 36px;
 }/*# sourceMappingURL=collect-words.css.map */
