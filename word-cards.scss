@@ -1,3 +1,7 @@
+@import './variables.scss';
+@import './animations.scss';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700;900&display=swap');
+
 .main {
   display: flex;
   align-items: center;
@@ -40,6 +44,10 @@
 
     .card.card__flipped & {
       transform: rotateY(180deg);
+
+      [data-generate-voice-output] {
+        display: none;
+      }
     }
   }
 
